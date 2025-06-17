@@ -80,7 +80,6 @@ async function fetchArticles() {
   });
 }
 
-// Obsługa formularza
 document.getElementById('articleForm')?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const form = e.target;
@@ -103,8 +102,6 @@ document.getElementById('articleForm')?.addEventListener('submit', async (e) => 
   fetchArticles();
 });
 
-// Obsługa sortowania
 document.getElementById('sortOrder')?.addEventListener('change', fetchArticles);
 
-// Start
 fetchArticles();
