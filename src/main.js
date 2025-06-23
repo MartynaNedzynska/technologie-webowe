@@ -58,7 +58,7 @@ const headers = {
 // Pobieranie artykułów
 async function fetchArticles() {
   const sortOrder = document.getElementById('sortOrder')?.value || 'created_at.asc';
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/article?select=*&order=${sortOrder}`, {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/articles?select=*&order=${sortOrder}`, {
     headers,
   });
   const articles = await res.json();
@@ -93,7 +93,7 @@ document.getElementById('articleForm')?.addEventListener('submit', async (e) => 
     created_at: form.created_at.value,
   };
 
-  await fetch(`${SUPABASE_URL}/rest/v1/article`, {
+  await fetch(`${SUPABASE_URL}/rest/v1/articles`, {
     method: 'POST',
     headers,
     body: JSON.stringify(newArticle),
