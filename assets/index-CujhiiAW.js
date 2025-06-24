@@ -37,11 +37,11 @@
   </div>
 
   
-`;g(document.querySelector("#counter"));const u="https://kipkplviqflklgdjoxyg.supabase.co",a="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtpcGtwbHZpcWZsa2xnZGpveHlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk0MTQ1MTAsImV4cCI6MjA2NDk5MDUxMH0.MS-azhCqRSWtDNkgnMYAv8KANtOxmLJS-SSQXFPr6r4",p={apikey:a,apiKey:a,Authorization:`Bearer ${a}`,"Content-Type":"application/json"};async function s(){var e;const r=((e=document.getElementById("sortOrder"))==null?void 0:e.value)||"created_at.asc",c=await(await fetch(`${u}/rest/v1/articles?select=*&order=${r}`,{headers:p})).json(),i=document.getElementById("articles");i.innerHTML="",c.forEach(t=>{const n=document.createElement("div"),h=new Date(t.created_at).toLocaleDateString("pl-PL");n.innerHTML=`
+`;g(document.querySelector("#counter"));const u="https://kipkplviqflklgdjoxyg.supabase.co",s="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtpcGtwbHZpcWZsa2xnZGpveHlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk0MTQ1MTAsImV4cCI6MjA2NDk5MDUxMH0.MS-azhCqRSWtDNkgnMYAv8KANtOxmLJS-SSQXFPr6r4",p={apikey:s,Authorization:`Bearer ${s}`,"Content-Type":"application/json"};async function a(){var e;const r=((e=document.getElementById("sortOrder"))==null?void 0:e.value)||"created_at.asc",c=await(await fetch(`${u}/rest/v1/articles?select=*&order=${r}`,{headers:p})).json(),i=document.getElementById("articles");i.innerHTML="",c.forEach(t=>{const n=document.createElement("div"),h=new Date(t.created_at).toLocaleDateString("pl-PL");n.innerHTML=`
       <h3>${t.title}</h3>
       <p><i>${t.subtitle}</i></p>
       <p><b>Autor:</b> ${t.author}</p>
       <p><b>Data:</b> ${h}</p>
       <p>${t.content}</p>
       <hr>
-    `,i.appendChild(n)})}var l;(l=document.getElementById("articleForm"))==null||l.addEventListener("submit",async r=>{r.preventDefault();const o=r.target,c={title:o.title.value,subtitle:o.subtitle.value,author:o.author.value,content:o.content.value,created_at:o.created_at.value};await fetch(`${u}/rest/v1/articles`,{method:"POST",headers:p,body:JSON.stringify(c)}),o.reset(),s()});var d;(d=document.getElementById("sortOrder"))==null||d.addEventListener("change",s);s();
+    `,i.appendChild(n)})}var l;(l=document.getElementById("articleForm"))==null||l.addEventListener("submit",async r=>{r.preventDefault();const o=r.target,c={title:o.title.value,subtitle:o.subtitle.value,author:o.author.value,content:o.content.value,created_at:o.created_at.value};await fetch(`${u}/rest/v1/articles`,{method:"POST",headers:p,body:JSON.stringify(c)}),o.reset(),a()});var d;(d=document.getElementById("sortOrder"))==null||d.addEventListener("change",a);a();
